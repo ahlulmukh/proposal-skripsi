@@ -1,14 +1,20 @@
-\documentclass{article}
+\documentclass[12pt,a4paper]{report}
+\usepackage{mathptmx}
 \usepackage{graphicx} % Required for inserting images
+\graphicspath{{img/}}
 
-\title{Thesis Template for Politeknik Negeri Lhokseumawe}
-\author{Muhammad Davi}
-\date{February 2023}
+\usepackage{geometry}
+\geometry{
+	top=3cm,
+	right=3cm,
+	left=4cm,
+	bottom=3cm,	
+}
+ 
+\input{settings}
 
 \begin{document}
 
-\maketitle
-
-\section{Introduction}
+\input{cover}
 
 \end{document}
