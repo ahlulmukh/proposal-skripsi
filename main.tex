@@ -27,6 +27,7 @@
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
 
 \def\contentsname{DAFTAR ISI}
+\renewcommand\bibname{DAFTAR PUSTAKA}
 \def\chaptername{BAB}
 
 \usepackage{titlesec}
@@ -50,6 +51,8 @@
 \onehalfspacing
 %\doublespacing
 %\setstretch{1.1}
+
+\usepackage[breaklinks]{hyperref}
 
 \hyphenation{me-la-in-kan}
 
@@ -76,13 +79,18 @@
 \input{bab1}
 \input{bab2}
 \input{bab3}
-
+\LaTeX{} \cite{lamport94} is a set of macros built atop \TeX{} \cite{texbook}.
 \input{jadwal-kegiatan}
 \input{rencana-anggaran}
 
+\begin{thebibliography}{9}
+\bibitem{texbook}
+Donald E. Knuth (1986) \emph{The \TeX{} Book}, Addison-Wesley Professional.
 
-\chapter*{DAFTAR PUSTAKA}
+\bibitem{lamport94}
+Leslie Lamport (1994) \emph{\LaTeX: a document preparation system}, Addison
+Wesley, Massachusetts, 2nd ed.
+\end{thebibliography}
 \addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
-\
 
 \end{document}
