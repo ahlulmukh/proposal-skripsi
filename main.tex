@@ -1,4 +1,5 @@
 \documentclass[12pt,a4paper]{report}
+
 \usepackage{mathptmx}
 \usepackage{graphicx} % Required for inserting images
 \graphicspath{{img/}}
@@ -10,11 +11,73 @@
 	left=4cm,
 	bottom=3cm,	
 }
- 
+
+\usepackage{setspace}
+\onehalfspacing
+  
+\renewcommand{\thechapter}{\centering \Roman{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+
+\def\contentsname{DAFTAR ISI}
+\def\chaptername{BAB}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\normalfont\bfseries\centering}{\MakeUppercase{\chaptertitlename}~\thechapter}{0pt}{}
+\titlespacing*{\chapter}{0pt}{-2pt}{16pt}
+
+\renewcommand\thechapter{\Roman{chapter}}
+\renewcommand\thesection{\arabic{section}}
+\def\thesection{\arabic{chapter}.\arabic{section}}
+\def\thetable{\arabic{table}}
+
+\titleformat{\section}[block]{\bf\normalsize}{\thesection}{0.6em}{}
+\titlespacing*{\section}{0pt}{5pt}{0pt}
+\titleformat{\subsection}[block]{\bf\normalsize}{\thesubsection}{0.6em}{}
+\titlespacing*{\subsection}{0pt}{5pt}{0pt}
+
 \input{settings}
 
 \begin{document}
 
 \input{cover}
+\pagenumbering{roman}
 \input{pengesahan}
+
+\tableofcontents
+\addcontentsline{toc}{chapter}{DAFTAR ISI}
+\clearpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\chapter{PENDAHULUAN}
+\section{Latar Belakang Masalah}
+\section{Rumusan Masalah}
+\section{Tujuan Penelitian}
+\section{Batasan Masalah}
+\section{Manfaat Penelitian}
+
+\chapter{TINJAUAN PUSTAKA}
+\section{State of the Art}
+\section{Tinjauan Teoritis}
+
+\chapter{METODOLOGI PENELITIAN}
+\section{Data dan Pengumpulan Data}
+\section{Rancangan Sistem(software/hardware)}
+\section{Metode dan Variabel Penelitian}
+\section{Teknik Pengujian}
+\section{Hasil yang diharapkan}
+
+\chapter*{JADWAL KEGIATAN PENELITIAN}
+\addcontentsline{toc}{chapter}{JADWAL KEGIATAN PENELITIAN}
+
+
+
+\chapter*{RENCANA ANGGARAN PENELITIAN}
+\addcontentsline{toc}{chapter}{RENCANA ANGGARAN PENELITIAN}
+
+
+
+\chapter*{DAFTAR PUSTAKA}
+\addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+
 \end{document}
