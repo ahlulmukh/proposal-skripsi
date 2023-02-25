@@ -1,17 +1,25 @@
 \documentclass[12pt,a4paper]{report}
 
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
 \usepackage{mathptmx}
 \usepackage{graphicx} % Required for inserting images
 \graphicspath{{img/}}
+\usepackage{multirow}
 
 \usepackage{geometry}
 \geometry{
-	top=3cm,
+	top=4cm,
 	right=3cm,
 	left=4cm,
 	bottom=3cm,	
 }
 
+\usepackage{pdflscape}
+\usepackage[table]{xcolor}
 \usepackage{setspace}
 \onehalfspacing
   
@@ -25,6 +33,8 @@
 \titleformat{\chapter}[display]{\normalfont\bfseries\centering}{\MakeUppercase{\chaptertitlename}~\thechapter}{0pt}{}
 \titlespacing*{\chapter}{0pt}{-2pt}{16pt}
 
+\renewcommand{\arraystretch}{1.5}
+
 \renewcommand\thechapter{\Roman{chapter}}
 \renewcommand\thesection{\arabic{section}}
 \def\thesection{\arabic{chapter}.\arabic{section}}
@@ -34,6 +44,14 @@
 \titlespacing*{\section}{0pt}{5pt}{0pt}
 \titleformat{\subsection}[block]{\bf\normalsize}{\thesubsection}{0.6em}{}
 \titlespacing*{\subsection}{0pt}{5pt}{0pt}
+
+\usepackage{setspace}
+%\singlespacing
+\onehalfspacing
+%\doublespacing
+%\setstretch{1.1}
+
+\hyphenation{me-la-in-kan}
 
 \input{settings}
 
@@ -45,39 +63,26 @@
 
 \tableofcontents
 \addcontentsline{toc}{chapter}{DAFTAR ISI}
+
+\listoftables
+\listoffigures
+
+\input{ringkasan}
 \clearpage
 
 \pagenumbering{arabic}
 \setcounter{page}{1}
-\chapter{PENDAHULUAN}
-\section{Latar Belakang Masalah}
-\section{Rumusan Masalah}
-\section{Tujuan Penelitian}
-\section{Batasan Masalah}
-\section{Manfaat Penelitian}
 
-\chapter{TINJAUAN PUSTAKA}
-\section{State of the Art}
-\section{Tinjauan Teoritis}
+\input{bab1}
+\input{bab2}
+\input{bab3}
 
-\chapter{METODOLOGI PENELITIAN}
-\section{Data dan Pengumpulan Data}
-\section{Rancangan Sistem(software/hardware)}
-\section{Metode dan Variabel Penelitian}
-\section{Teknik Pengujian}
-\section{Hasil yang diharapkan}
-
-\chapter*{JADWAL KEGIATAN PENELITIAN}
-\addcontentsline{toc}{chapter}{JADWAL KEGIATAN PENELITIAN}
-
-
-
-\chapter*{RENCANA ANGGARAN PENELITIAN}
-\addcontentsline{toc}{chapter}{RENCANA ANGGARAN PENELITIAN}
-
+\input{jadwal-kegiatan}
+\input{rencana-anggaran}
 
 
 \chapter*{DAFTAR PUSTAKA}
 \addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+\
 
 \end{document}
