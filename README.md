@@ -2,4 +2,4 @@
 
 Thesis Template for Politeknik Negeri Lhokseumawe
 
-Tugas Akhir PNL yang berjudul implementassi photon unit networking untuk game multiplayer 3d open world
+Implementasi Synchrnous Pada Game First Person Shooter (FPS) 3D Multiplayer "Jak Meuprang" Dengan Menggunakan Unity Dan Framework Photon Unity Networking (PUN) Pada Perangkat Android
