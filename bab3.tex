@@ -10,10 +10,12 @@ Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk 
 \end{enumerate}
 
 \section{Rancangan Sistem(software/hardware)}
-    Pada penilitian ini membutuhkan \textit{software} dan perangkat keras untuk melakukan pembuatan game first person shooter. Berikut ini spesifikasi rancangan sistem penilitian yang dijabarkan pada Tabel 3.1
+    Pada penilitian ini membutuhkan \textit{software} dan perangkat keras untuk melakukan pembuatan game first person shooter. Berikut ini spesifikasi rancangan sistem penilitian yang dijabarkan pada Tabel \ref{tb:tabel-spesifikasi}
     
     \begin{table}[h]
         \centering
+        \caption{Tabel spesifikasi}
+	\label{tb:tabel-spesifikasi}
         \begin{tabular}{|ll|lll}
         \cline{1-2}
         \multicolumn{2}{|c|}{Software}                                                &  &  &  \\ \cline{1-2}
@@ -30,15 +32,45 @@ Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk 
 Matchmaking dalam fitur permainan ini berperan sangat penting dan merupakan peran utama. Dalam peran tersebut, matchmaking mempertemukan antar pemain yang sedang aktif dalam melakukan pencarian room. Berikut penjelasan algoritma dalam bentuk \textit{flowchart} pada gambar 1.
 \begin{figure}[h]
     \centering
-    \caption{uhy}
+    \caption{Konteks  Algoritma Matchmaking}
     \includegraphics[width=15cm]{flowchart-matchmaking}
-    \label{tb:uhuy}
+    \label{fig:algoritmamatmaching}
     \end{figure}
-\section{Metode dan Variabel Penelitian}
-Pada bagian ini diuraikan pembuatan/implementasi sistem,   metode/algoritma yang digunakan, jika memungkinkan disertai dengan flowchart dari proses implementasi dan algoritma yang digunakan.
 
-\section{Teknik Pengujian}
-Pada bagian ini diuraikan tentang keterkaitan antarfaktor dari data yang diperoleh  berdasarkan masalah yang dirumuskan pada bagian rumusan masalah. Selanjutnya,  masalah tersebut diselesaikan dengan metode/algoritma yang digunakan, dianalisis proses dan hasil penyelesaian masalah tersebut.  Dalam hal ini, perlu disebutkan parameter-parameter yang akan diuji dan dianalisis pada penelitian yang dimaksud beserta dengan alat ujinya.
 
-\section{Hasil yang diharapkan}
-Pada bagian ini dicantumkan prediksi hasil penelitian. Dalam hal ini, dapat dipaparkan kira-kira hasil akhir penelitian yang akan dicapai berupa apa?
+    Mengacu pada gambar \ref{fig:algoritmamatmaching}, algoritma membutuhkan daftar \textit{room} yang didapatkan dari \textit{interface} photon \textit{Behavior}. Jika belum ada \textit{room} yang tersedia pada daftar \textit{room}, maka dilakukan fungsi detil dari algoritma matchmaking yaitu SearchRoomMatchmaking(). Berikut detil penjelasan flowchart pada gambar \ref{fig:detail-mm-1} dan gambar \ref{fig:detail-mm-2}.
+    \newpage
+    \begin{figure}[h]
+        \centering
+        \caption{Detail Algoritma Matchmaking 1}
+        \includegraphics[width=10cm]{detail-algoritma-matmaking1.png}
+        \label{fig:detail-mm-1}
+        \end{figure}
+
+
+        Mengacu pada Gambar \ref{fig:detail-mm-1}, ketika fungsi ini dipanggil, 
+maka ia akan memulai perulangan sebanyak daftar room yang 
+tersedia. Pencarian bertujuan untuk mencari room yang memiliki 
+status sedang tidak bermain (waiting). Jika tidak menemukan 
+room yang tersedia dan ber-status tidak sedang bermain (waiting) 
+maka akan dilakukan pemanggilan fungsi 
+RealocateRoomMatchmaking() yang dijelaskan lebih detil pada 
+Gambar \ref{fig:detail-mm-2}. Jika sebaliknya maka pemain akan bergabung ke 
+dalam room.
+
+\begin{figure}[h]
+    \centering
+    \caption{Detail Algoritma Matchmaking 2}
+    \includegraphics[width=10cm]{detail-algoritma-matmaking2.png}
+    \label{fig:detail-mm-2}
+    \end{figure}
+
+
+        \section{Metode dan Variabel Penelitian}
+        Pada bagian ini diuraikan pembuatan/implementasi sistem,   metode/algoritma yang digunakan, jika memungkinkan disertai dengan flowchart dari proses implementasi dan algoritma yang digunakan.
+        
+        \section{Teknik Pengujian}
+        Pada bagian ini diuraikan tentang keterkaitan antarfaktor dari data yang diperoleh  berdasarkan masalah yang dirumuskan pada bagian rumusan masalah. Selanjutnya,  masalah tersebut diselesaikan dengan metode/algoritma yang digunakan, dianalisis proses dan hasil penyelesaian masalah tersebut.  Dalam hal ini, perlu disebutkan parameter-parameter yang akan diuji dan dianalisis pada penelitian yang dimaksud beserta dengan alat ujinya.
+        
+        \section{Hasil yang diharapkan}
+        Pada bagian ini dicantumkan prediksi hasil penelitian. Dalam hal ini, dapat dipaparkan kira-kira hasil akhir penelitian yang akan dicapai berupa apa?
