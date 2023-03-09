@@ -83,16 +83,16 @@ Pemain dapat menjadi server jika pemain melakukan \textit{use case} buat room da
 \subsection{Activity Diagram}
 \textit{Activity diagram} adalah diagram yang memodelkan aliran aktivitas pada sistem
 \begin{enumerate}
-    \item \textit{Activity Player}
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=10cm]{player-case.png}
-        \caption{Activity Diagram Player}
-        \label{fig:player-case}
-    \end{figure}
-    \\ Gambar \ref{fig:player-case} merupakan \textit{Activity Diagram Player}. Diawali dengan pemain harus terkoneksi jaringan photon, kemudian sistem akan memasuki ke layer network, yang akan menghubungkan beberapa komponen yaitu player movement, player health dan player info.
-    Pada \textit{photon RPC} player memasuki ke sistem sinkronisasi kedalam \textit{projectileshoot} yang berfungsi disini sebagai menambak player musuh, kemudian memasukin activit weapon info yang berisi \textit{ammo weapon}, dan dari ammo yang tersedia mamsuki activity playerfire yang menandakan player siap memerangi player lain.
-    \newpage
+    % \item \textit{Activity Player}
+    % \begin{figure}[h]
+    %     \centering
+    %     \includegraphics[width=10cm]{player-case.png}
+    %     \caption{Activity Diagram Player}
+    %     \label{fig:player-case}
+    % \end{figure}
+    % \\ Gambar \ref{fig:player-case} merupakan \textit{Activity Diagram Player}. Diawali dengan pemain harus terkoneksi jaringan photon, kemudian sistem akan memasuki ke layer network, yang akan menghubungkan beberapa komponen yaitu player movement, player health dan player info.
+    % Pada \textit{photon RPC} player memasuki ke sistem sinkronisasi kedalam \textit{projectileshoot} yang berfungsi disini sebagai menambak player musuh, kemudian memasukin activit weapon info yang berisi \textit{ammo weapon}, dan dari ammo yang tersedia mamsuki activity playerfire yang menandakan player siap memerangi player lain.
+    % \newpage
     \item \textit{Activity Diagram} buat \textit{Room}
      \begin{figure}[h]
         \centering
@@ -210,10 +210,6 @@ Mengacu pada gambar \ref{fig:algoritmamatmaching}, algoritma membutuhkan daftar 
 %         \includegraphics[width=10cm]{detail-algoritma-matmaking2.png}
 %         \label{fig:detail-mm-2}
 %         \end{figure}
-
-        \subsection{Variabel Penelitian}
-
-        Variabel yang digunakan dalam penelitian ini yaitu berupa framework unity menggunakan Photon Unity Networking yang berguna untuk mengelola pertukaran data sinronisasi antara klien melalui photon cloud untuk menjumpai sesama player pada room didalam aplikasi permainan.
 
         \section{Teknik Pengujian}
 \subsection{Pengujian \textit{Black Box}}
