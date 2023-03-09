@@ -176,8 +176,45 @@ NetworkPlayerProperty dan NetworkRoomProperty bertugas untuk menyimpan nilai \te
     \label{fig:class-network}
 \end{figure}
 
-\section{Metode dan Variabel Penelitian}
-\subsection{Metode Penelitian}
+\begin{enumerate}
+    \item Activity Class Diagram Network
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=8cm]{activity-class-network.png}
+        \caption{\textit{Activity Class Diagram Network}}
+        \label{fig:activity-class-network}
+    \end{figure}
+    \newpage
+    Dapat dilihat pada gambar \ref{fig:activity-class-network} digambarkan alur kerja atau aktivitas sebuah system \textit{photon unity networking} yang dimulai dengan terkoneksi internet kemudian sistem akan melakukan koneksi ke \textit{photon}. Jika gagal menghubungkan maka sistem akan mengembalikan pemain ke layar menu, jika berhasil player akan memasuki lobby.
+    Pada saat dilobby pemain akan memasuki kondisi kedua, menghubungkan pemain ke dalam game server, jika sudah ter-\textit{connect} maka pemain akan memasuki \textit{room} yang sudah dihubungkan. Jika semua activity sudah dilakukan dan pemain sudah menghabiskan pada \textit{room} terssebut maka pemain akan dikembalikan ke main menu.
+\end{enumerate}
+
+\subsection{\textit{Class Diagram Game}}
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=10cm]{class-diagram-game.png}
+    \caption{\textit{Class Diagram Game}}
+    \label{fig:class-diagram-game}
+\end{figure}
+
+Pada gambar \ref{fig:class-diagram-game} perancangan sistem pembuatan game 3d terdiri dari, kontrol berfungsi untuk pegerakan arah dan posisi kamera karakter \textit{player}. Pada atribut karakter, karakter memiliki darah, pergerakan, bidik dan tembak  dan pada senjata, jika \textit{player} menembak \textit{player} lain maka player tersebut akan berkurang darahnya sebesar 20 begitu juga sebaliknya jika \textit{player} musuh menembak maka \textit{player} yang dimainkan akan berkurang darahnya sebesar 20.
+\newpage
+\begin{enumerate}
+    \item \textit{Activity Class Diagram Game}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=10cm]{blok-diagram-game.png}
+        \caption{\textit{Blok Diagram Game}}
+        \label{fig:aclass-diagram-game}
+    \end{figure}
+
+    Dapat dilihat pada gambar \ref{fig:aclass-diagram-game} digambarkan alur kerja atau aktivitas sebuah sistem game yang dimulai \textit{start game} untuk memulai permainan kemudian menunggu \textit{loading} untuk memasuki permainan, sistem akan menginisialisasi objectnya terlebih dahulu seperti map, senjata dan point.
+    Jika inisialisasi sudah selesai game akan dimulai dan pemain spawn pada saat game dimulai, jika pemain bertemu pemain lain dan bertempur akan ditemukan dua kondisi, jika mati pemain akan \textit{respawn} ulang dengan waktu 5 detik, jika pemain memenangkan pertempuran maka pemain mendapatkan point.
+    Ketika game sudah habis waktu makan game sudah berakhir dan akan mamasukin akhir game permainan.
+\end{enumerate}
+\newpage
+
+\section{Metode Penelitian}
 Photon memiliki fitur dan metode sendiri dalam mengelola sebuah \textit{game} multiplayer yang menggunakan \textit{framework}-nya. Metode penelitian yang menggunakan framework photon unity dapat digambarkan ke dalam bentuk flowchart seperti gambar .
         \begin{figure}[h]
          \centering
@@ -186,7 +223,6 @@ Photon memiliki fitur dan metode sendiri dalam mengelola sebuah \textit{game} mu
          \label{fig:algoritmamatmaching}
          \end{figure}
 
-\newpage
 Mengacu pada gambar \ref{fig:algoritmamatmaching}, algoritma membutuhkan daftar \textit{room} yang didapatkan dari \textit{interface} photon \textit{Behavior}. Jika belum ada \textit{room} yang tersedia pada daftar \textit{room}, maka dilakukan fungsi detil dari algoritma matchmaking yaitu SearchRoomMatchmaking(). 
 
 % Berikut detil penjelasan flowchart pada gambar \ref{fig:detail-mm-1} dan gambar \ref{fig:detail-mm-2}.
