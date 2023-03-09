@@ -137,11 +137,107 @@ Pemain dapat menjadi server jika pemain melakukan \textit{use case} buat room da
     \end{figure}
     \\ Gambar \ref{fig:egame-case} merupakan \textit{activity diagram exit game}. Diawali dengan pemain menekan tombol \textit{exit game}. Sistem akan mengeluarkan pemain dari game yang sedang dimainkan.
 \end{enumerate}
+
+% \subsection{Rancangan Arsitektur Umum Matchmaking}
+% Photon memiliki fitur dan metode sendiri dalam mengelola sebuah \textit{game} multiplayer yang menggunakan \textit{framework}-nya.
+% Photon Unity Networking merupakan class library yang dibungkus menjadi framework untuk mengelola pertukaran data sinkronisasi antar klien melalui Photon Cloud. 
+% Arsitektur aplikasi permainan jak meuprang ini pada umumnya mempertemukan player pada lobby terlebih dahulu sebagai syarat memulai permainan dengan memanfaatkan event dan state yang ada pada Photon Unity Networking, komponen data pemain dan \textit{room} tersimpan dalam \textit{Custom Properties}. Berikut adalah arsitektur sistem dari aplikasi permainan pada Gambar \ref{fig:rumum-arsi}.
+% \newpage
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=10cm]{rancangan-arsitektur.png}
+%     \caption{Rancangan Arsitektur Umum Matchmaking}
+%     \label{fig:rumum-arsi}
+% \end{figure}
+
+\subsection{Class Diagram Network}
+Rancangan kelas diagram ini merupakan bagian penting dari fitur \textit{Synchronous Multiplayer} dan akan diimplementasikan sesuai dengan rancangan diagram kelas seperti gambar \ref{fig:class-network}.
+
+Pada kelas NetworkSpawner berfungsi untuk melakukan instansiasi objek karakter pemain dan menghidupkan kembali jika karakter pemain dalam keadaan \textit{state} mati.
+
+Pada kelas NetworkMatchmaking, kelas ini akan menunggu event dari kelas NetworkManager. NetworkMatchmaking tidak dapat berjalan tanpa dikendalikan oleh NetworkManager.
+
+Photon memiliki fitur penyimpanan \textit{state} sementara pada \textit{server}-nya (Photon Cloud), fitur tersebut berguna untuk menyimpan informasi \textit{room}, skor \textit{leaderboard} tiap pemain.
+Fiture tersebut yaitu Photon Room Properties dan Photon Player Properties.
+Perbedaanya adalah, penyimpanan dalam Photon Room Properties dapat diketahui nilainya oleh klien dalam satu \textit{room} yang sama, tetapi jika ingin mendapatkan nilai informasi dalam sebuah \textit{room} melalui Photon Room Properties, maka \textit{masterclient} diroom yang bersangkutan harus melakukan pengaturan pada \textit{method} CustomPropertiesForLobby yang terdapat pada photon.
+Sedangkan Photon Player Properties hanya dapat diakses ketika dalam satu room yang sama.
+
+NetworkPlayerProperty dan NetworkRoomProperty bertugas untuk menyimpan nilai \textit{unique} yang terdapat pada Photon Player Properties dan Photon Room Properties.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=8cm]{class-diagram-network.png}
+    \caption{Class Diagram Network}
+    \label{fig:class-network}
+\end{figure}
+
 \section{Metode dan Variabel Penelitian}
-        Pada bagian ini diuraikan pembuatan/implementasi sistem,   metode/algoritma yang digunakan, jika memungkinkan disertai dengan flowchart dari proses implementasi dan algoritma yang digunakan.
-        
-\section{Teknik Pengujian}
-        Pada bagian ini diuraikan tentang keterkaitan antarfaktor dari data yang diperoleh  berdasarkan masalah yang dirumuskan pada bagian rumusan masalah. Selanjutnya,  masalah tersebut diselesaikan dengan metode/algoritma yang digunakan, dianalisis proses dan hasil penyelesaian masalah tersebut.  Dalam hal ini, perlu disebutkan parameter-parameter yang akan diuji dan dianalisis pada penelitian yang dimaksud beserta dengan alat ujinya.
+\subsection{Metode Penelitian}
+Photon memiliki fitur dan metode sendiri dalam mengelola sebuah \textit{game} multiplayer yang menggunakan \textit{framework}-nya. Metode penelitian yang menggunakan framework photon unity dapat digambarkan ke dalam bentuk flowchart seperti gambar .
+        \begin{figure}[h]
+         \centering
+         \caption{flowchart Algoritma Matchmaking}
+         \includegraphics[width=10cm]{flowchart-matchmaking}
+         \label{fig:algoritmamatmaching}
+         \end{figure}
+
+\newpage
+Mengacu pada gambar \ref{fig:algoritmamatmaching}, algoritma membutuhkan daftar \textit{room} yang didapatkan dari \textit{interface} photon \textit{Behavior}. Jika belum ada \textit{room} yang tersedia pada daftar \textit{room}, maka dilakukan fungsi detil dari algoritma matchmaking yaitu SearchRoomMatchmaking(). 
+
+% Berikut detil penjelasan flowchart pada gambar \ref{fig:detail-mm-1} dan gambar \ref{fig:detail-mm-2}.
+% \begin{figure}[h]
+%             \centering
+%             \caption{Detail Algoritma Matchmaking 1}
+%             \includegraphics[width=10cm]{detail-algoritma-matmaking1.png}
+%             \label{fig:detail-mm-1}
+%             \end{figure}
+    
+    
+%             Mengacu pada Gambar \ref{fig:detail-mm-1}, ketika fungsi ini dipanggil, 
+%     maka ia akan memulai perulangan sebanyak daftar room yang 
+%     tersedia. Pencarian bertujuan untuk mencari room yang memiliki 
+%     status sedang tidak bermain (waiting). Jika tidak menemukan 
+%     room yang tersedia dan ber-status tidak sedang bermain (waiting) 
+%     maka akan dilakukan pemanggilan fungsi 
+%     RealocateRoomMatchmaking() yang dijelaskan lebih detil pada 
+%     Gambar \ref{fig:detail-mm-2}. Jika sebaliknya maka pemain akan bergabung ke 
+%     dalam room.
+    
+%     \newpage
+%     \begin{figure}[h]
+%         \centering
+%         \caption{Detail Algoritma Matchmaking 2}
+%         \includegraphics[width=10cm]{detail-algoritma-matmaking2.png}
+%         \label{fig:detail-mm-2}
+%         \end{figure}
+
+        \subsection{Variabel Penelitian}
+
+        Variabel yang digunakan dalam penelitian ini yaitu berupa framework unity menggunakan Photon Unity Networking yang berguna untuk mengelola pertukaran data sinronisasi antara klien melalui photon cloud untuk menjumpai sesama player pada room didalam aplikasi permainan.
+
+        \section{Teknik Pengujian}
+\subsection{Pengujian \textit{Black Box}}
+Pengujian Black Box pada fungsional sistem yang terdapat pada aplikasi permainan jak meuprang.
+
+    \begin{table}[h]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    \multicolumn{1}{|c|}{NO} & \multicolumn{1}{c|}{Aktivitas Pengujian} & \multicolumn{1}{c|}{Hasil yang diharapkan} & \multicolumn{1}{c|}{Kesimpulan} \\ \hline
+    1                        & Tombol Buat Room                         & Membuka panel "Room Panel"                 &                                 \\ \hline
+    2                        & Tombol Join Room                         & Membuka panel "Lobby Panel"                &                                 \\ \hline
+    3                        & Tombol Exit Room                         & Kembali ke menu utama                      &                                 \\ \hline
+    4                        & Tombol About Game                        & Menampilkan popup about game               &                                 \\ \hline
+    5                        & Tombol exit game                         & Keluar dari aplikasi game                  &                                 \\ \hline
+    \end{tabular}
+    \caption{Tabel Pengujian Black Box}
+    \label{lab:tabel-pengujian}
+    \end{table}
         
 \section{Hasil yang diharapkan}
-        Pada bagian ini dicantumkan prediksi hasil penelitian. Dalam hal ini, dapat dipaparkan kira-kira hasil akhir penelitian yang akan dicapai berupa apa?
+Hasil yang diharapkan pada penilitian ini antara lain :
+\begin{enumerate}
+    \item Keberhasilan dalam mengetahui kelayakan aplikasi game dengan metode \textit{blackbox testing}.
+    \item Keberhasilan game terhubung dengan unity python networking yang dapat dimainkan secara multiplayer online.
+    \item Laporan tugas akhir mahasiswa jurusan Teknologi Informasi Dan Komputer.
+\end{enumerate}
