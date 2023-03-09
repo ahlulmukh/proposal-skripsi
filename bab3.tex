@@ -67,42 +67,32 @@ Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk 
 %     \label{fig:detail-mm-2}
 %     \end{figure}
 
-\subsection{Use Case Diagram}
-Tahapan ini memiliki satu aktor yaitu pemain, penjelasan mengenai tahap ini diilustrasikan pada gambar \ref{fig:case-diagram}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=10cm]{case-diagram.png}
-    \caption{Use Case Diagram}
-    \label{fig:case-diagram}
-\end{figure}
-
-    Gambar \ref{fig:case-diagram} menjelaskan tentang \textit{Use Case Diagram} dimana terdapat satu aktor yaitu pemain, serta 5 \textit{Use Case} yaitu \textit{Buat Room, Join Room, Exit Room, About Game, Exit Game}.
-Pemain dapat menjadi server jika pemain melakukan \textit{use case} buat room dan pemain juga bisa menjadi client jika pemain menggunakan \textit{use case join room}, tetapi jika tidak adanya pemain yang menggunakan \textit{use case} buat room, maka \textit{use case} join room tidak dapat digunakan oleh pemain yang menjadi client.
-\textit{use case exit room} dapat dilakukan oleh pemain yang menjadi server maupun menjadi client, dan hal itu akan menghapus sesi room yang sudah dibuat jika semua pemain menggunakan \textit{use case exit room}. \textit{Use case about game} dapat dilakukan oleh pemain untuk mengetahui tentang game yang dimainkan, dan yang terakhir jika pemain ingin meninggalkam game, pemain mengunakan \textit{Use case Exit Game.}
-\subsection{Activity Diagram}
-\textit{Activity diagram} adalah diagram yang memodelkan aliran aktivitas pada sistem
+\subsection{Rancangan Use Case Diagram}
 \begin{enumerate}
-    % \item \textit{Activity Player}
-    % \begin{figure}[h]
-    %     \centering
-    %     \includegraphics[width=10cm]{player-case.png}
-    %     \caption{Activity Diagram Player}
-    %     \label{fig:player-case}
-    % \end{figure}
-    % \\ Gambar \ref{fig:player-case} merupakan \textit{Activity Diagram Player}. Diawali dengan pemain harus terkoneksi jaringan photon, kemudian sistem akan memasuki ke layer network, yang akan menghubungkan beberapa komponen yaitu player movement, player health dan player info.
-    % Pada \textit{photon RPC} player memasuki ke sistem sinkronisasi kedalam \textit{projectileshoot} yang berfungsi disini sebagai menambak player musuh, kemudian memasukin activit weapon info yang berisi \textit{ammo weapon}, dan dari ammo yang tersedia mamsuki activity playerfire yang menandakan player siap memerangi player lain.
-    % \newpage
-    \item \textit{Activity Diagram} buat \textit{Room}
-     \begin{figure}[h]
+    \item \textit{Use Case Diagram}
+    \\ Tahapan ini memiliki satu aktor yaitu pemain, penjelasan mengenai tahap ini diilustrasikan pada gambar \ref{fig:case-diagram}
+    \begin{figure}[h]
         \centering
-        \includegraphics[width=10cm]{room-diagram.png}
-        \caption{Activity Diagram Create Room}
-        \label{fig:croom-case}
+        \includegraphics[width=10cm]{case-diagram.png}
+        \caption{Use Case Diagram}
+        \label{fig:case-diagram}
     \end{figure}
-    \\ Gambar \ref{fig:croom-case} merupakan \textit{Activity Diagram Create Room}. Diawali dengan pemain membuka game, sistem akan menampilkan menu game, player menekan tombol buat room untuk membuat room yang belum tersedia sebagai server atau pemilk room.
-    Pada \textit{activity waiting player} pemilik room akan menunggu player/\textit{client} untuk memasukan room dan memulai game.
-    \newpage
+    Gambar \ref{fig:case-diagram} menjelaskan tentang \textit{Use Case Diagram} dimana terdapat satu aktor yaitu pemain, serta 5 \textit{Use Case} yaitu \textit{Buat Room, Join Room, Exit Room, About Game, Exit Game}.
+    Pemain dapat menjadi server jika pemain melakukan \textit{use case} buat room dan pemain juga bisa menjadi client jika pemain menggunakan \textit{use case join room}, tetapi jika tidak adanya pemain yang menggunakan \textit{use case} buat room, maka \textit{use case} join room tidak dapat digunakan oleh pemain yang menjadi client.
+    \textit{use case exit room} dapat dilakukan oleh pemain yang menjadi server maupun menjadi client, dan hal itu akan menghapus sesi room yang sudah dibuat jika semua pemain menggunakan \textit{use case exit room}. \textit{Use case about game} dapat dilakukan oleh pemain untuk mengetahui tentang game yang dimainkan, dan yang terakhir jika pemain ingin meninggalkam game, pemain mengunakan \textit{Use case Exit Game.}
+    \textit{Activity diagram} adalah diagram yang memodelkan aliran aktivitas pada sistem.
+    \item Activity Diagram
+    \begin{enumerate}
+        \item \textit{Activity Diagram} buat \textit{Room}
+        \begin{figure}[h]
+           \centering
+           \includegraphics[width=10cm]{room-diagram.png}
+           \caption{Activity Diagram Create Room}
+           \label{fig:croom-case}
+       \end{figure}
+       \\ Gambar \ref{fig:croom-case} merupakan \textit{Activity Diagram Create Room}. Diawali dengan pemain membuka game, sistem akan menampilkan menu game, player menekan tombol buat room untuk membuat room yang belum tersedia sebagai server atau pemilk room.
+       Pada \textit{activity waiting player} pemilik room akan menunggu player/\textit{client} untuk memasukan room dan memulai game.
+       \newpage
     \item \textit{Activty Diagram} join \textit{Room}
     \begin{figure}[h]
         \centering
@@ -119,7 +109,7 @@ Pemain dapat menjadi server jika pemain melakukan \textit{use case} buat room da
         \caption{Activity Diagram Exit Room}
         \label{fig:eroom-case}
     \end{figure}
-    \\ Gambar \ref{fig:eroom-case} merupakan \textit{activity diagram exit room}. Diawali dengan pemain menekan tombol exit room, sistem akan menampilkan menu utama pada game.
+    \\ Gambar \ref{fig:eroom-case} merupakan \textit{activity diagram exit room}. Diawali dengan pemain menekan tombol exit room, sistem akan menampilkan menu utama pada game.    
     \item \textit{Activity Diagram About Room}
      \begin{figure}[h]
         \centering
@@ -137,6 +127,21 @@ Pemain dapat menjadi server jika pemain melakukan \textit{use case} buat room da
     \end{figure}
     \\ Gambar \ref{fig:egame-case} merupakan \textit{activity diagram exit game}. Diawali dengan pemain menekan tombol \textit{exit game}. Sistem akan mengeluarkan pemain dari game yang sedang dimainkan.
 \end{enumerate}
+\end{enumerate}
+
+    % \item \textit{Activity Player}
+    % \begin{figure}[h]
+    %     \centering
+    %     \includegraphics[width=10cm]{player-case.png}
+    %     \caption{Activity Diagram Player}
+    %     \label{fig:player-case}
+    % \end{figure}
+    % \\ Gambar \ref{fig:player-case} merupakan \textit{Activity Diagram Player}. Diawali dengan pemain harus terkoneksi jaringan photon, kemudian sistem akan memasuki ke layer network, yang akan menghubungkan beberapa komponen yaitu player movement, player health dan player info.
+    % Pada \textit{photon RPC} player memasuki ke sistem sinkronisasi kedalam \textit{projectileshoot} yang berfungsi disini sebagai menambak player musuh, kemudian memasukin activit weapon info yang berisi \textit{ammo weapon}, dan dari ammo yang tersedia mamsuki activity playerfire yang menandakan player siap memerangi player lain.
+    % \newpage
+    
+
+
 
 % \subsection{Rancangan Arsitektur Umum Matchmaking}
 % Photon memiliki fitur dan metode sendiri dalam mengelola sebuah \textit{game} multiplayer yang menggunakan \textit{framework}-nya.
