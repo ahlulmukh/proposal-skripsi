@@ -162,54 +162,53 @@ Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk 
 %     \label{fig:rumum-arsi}
 % \end{figure}
 
-\subsection{Class Diagram Network}
-\noindent
+% \subsection{Class Diagram Network}
+% \noindent
 
-Rancangan kelas diagram ini merupakan bagian penting dari fitur \textit{Synchronous Multiplayer} dan akan diimplementasikan sesuai dengan rancangan diagram kelas seperti gambar \ref{fig:class-network}.
+% Rancangan kelas diagram ini merupakan bagian penting dari fitur \textit{Synchronous Multiplayer} dan akan diimplementasikan sesuai dengan rancangan diagram kelas seperti gambar \ref{fig:class-network}.
 
-Pada kelas NetworkSpawner berfungsi untuk melakukan instansiasi objek karakter pemain dan menghidupkan kembali jika karakter pemain dalam keadaan \textit{state} mati.
+% Pada kelas NetworkSpawner berfungsi untuk melakukan instansiasi objek karakter pemain dan menghidupkan kembali jika karakter pemain dalam keadaan \textit{state} mati.
 
-Pada kelas NetworkMatchmaking, kelas ini akan menunggu event dari kelas NetworkManager. NetworkMatchmaking tidak dapat berjalan tanpa dikendalikan oleh NetworkManager.
+% Pada kelas NetworkMatchmaking, kelas ini akan menunggu event dari kelas NetworkManager. NetworkMatchmaking tidak dapat berjalan tanpa dikendalikan oleh NetworkManager.
 
-Photon memiliki fitur penyimpanan \textit{state} sementara pada \textit{server}-nya (Photon Cloud), fitur tersebut berguna untuk menyimpan informasi \textit{room}, skor \textit{leaderboard} tiap pemain.
-Fiture tersebut yaitu Photon Room Properties dan Photon Player Properties.
-Perbedaanya adalah, penyimpanan dalam Photon Room Properties dapat diketahui nilainya oleh klien dalam satu \textit{room} yang sama, tetapi jika ingin mendapatkan nilai informasi dalam sebuah \textit{room} melalui Photon Room Properties, maka \textit{masterclient} diroom yang bersangkutan harus melakukan pengaturan pada \textit{method} CustomPropertiesForLobby yang terdapat pada photon.
-Sedangkan Photon Player Properties hanya dapat diakses ketika dalam satu room yang sama.
+% Photon memiliki fitur penyimpanan \textit{state} sementara pada \textit{server}-nya (Photon Cloud), fitur tersebut berguna untuk menyimpan informasi \textit{room}, skor \textit{leaderboard} tiap pemain.
+% Fiture tersebut yaitu Photon Room Properties dan Photon Player Properties.
+% Perbedaanya adalah, penyimpanan dalam Photon Room Properties dapat diketahui nilainya oleh klien dalam satu \textit{room} yang sama, tetapi jika ingin mendapatkan nilai informasi dalam sebuah \textit{room} melalui Photon Room Properties, maka \textit{masterclient} diroom yang bersangkutan harus melakukan pengaturan pada \textit{method} CustomPropertiesForLobby yang terdapat pada photon.
+% Sedangkan Photon Player Properties hanya dapat diakses ketika dalam satu room yang sama.
 
-NetworkPlayerProperty dan NetworkRoomProperty bertugas untuk menyimpan nilai \textit{unique} yang terdapat pada Photon Player Properties dan Photon Room Properties.
+% NetworkPlayerProperty dan NetworkRoomProperty bertugas untuk menyimpan nilai \textit{unique} yang terdapat pada Photon Player Properties dan Photon Room Properties.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=8cm]{class-diagram-network.png}
-    \caption{Class Diagram Network}
-    \label{fig:class-network}
-\end{figure}
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=8cm]{class-diagram-network.png}
+%     \caption{Class Diagram Network}
+%     \label{fig:class-network}
+% \end{figure}
 
-\begin{enumerate}
-    \item Activity Class Diagram Network
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=8cm]{activity-class-network.png}
-        \caption{\textit{Activity Class Diagram Network}}
-        \label{fig:activity-class-network}
-    \end{figure}
-    \newpage
-    Dapat dilihat pada gambar \ref{fig:activity-class-network} digambarkan alur kerja atau aktivitas sebuah system \textit{photon unity networking} yang dimulai dengan terkoneksi internet kemudian sistem akan melakukan koneksi ke \textit{photon}. Jika gagal menghubungkan maka sistem akan mengembalikan pemain ke layar menu, jika berhasil player akan memasuki lobby.
-    Pada saat dilobby pemain akan memasuki kondisi kedua, menghubungkan pemain ke dalam game server, jika sudah ter-\textit{connect} maka pemain akan memasuki \textit{room} yang sudah dihubungkan. Jika semua activity sudah dilakukan dan pemain sudah menghabiskan pada \textit{room} terssebut maka pemain akan dikembalikan ke main menu.
-\end{enumerate}
+% \begin{enumerate}
+%     \item Activity Class Diagram Network
+%     \begin{figure}[h]
+%         \centering
+%         \includegraphics[width=8cm]{activity-class-network.png}
+%         \caption{\textit{Activity Class Diagram Network}}
+%         \label{fig:activity-class-network}
+%     \end{figure}
+%     \newpage
+%     Dapat dilihat pada gambar \ref{fig:activity-class-network} digambarkan alur kerja atau aktivitas sebuah system \textit{photon unity networking} yang dimulai dengan terkoneksi internet kemudian sistem akan melakukan koneksi ke \textit{photon}. Jika gagal menghubungkan maka sistem akan mengembalikan pemain ke layar menu, jika berhasil player akan memasuki lobby.
+%     Pada saat dilobby pemain akan memasuki kondisi kedua, menghubungkan pemain ke dalam game server, jika sudah ter-\textit{connect} maka pemain akan memasuki \textit{room} yang sudah dihubungkan. Jika semua activity sudah dilakukan dan pemain sudah menghabiskan pada \textit{room} terssebut maka pemain akan dikembalikan ke main menu.
+% \end{enumerate}
 
-\subsection{\textit{Class Diagram Game}}
+\subsection{\textit{Class Diagram} Perancangan}
 \begin{figure}[h]
    \centering
-   \includegraphics[width=10cm]{class-diagram-game.png}
-    \caption{\textit{Class Diagram Game}}
+   \includegraphics[width=10cm]{class-diagram-perancangan.png}
+    \caption{\textit{Class Diagram} Perancangan}
     \label{fig:class-diagram-game}
 \end{figure}
 
 Pada gambar \ref{fig:class-diagram-game} perancangan sistem pembuatan game 3d terdiri dari, kontrol berfungsi untuk pegerakan arah dan posisi kamera karakter \textit{player}. Pada atribut karakter, karakter memiliki darah, pergerakan, bidik dan tembak  dan pada senjata, jika \textit{player} menembak \textit{player} lain maka player tersebut akan berkurang darahnya sebesar 20 begitu juga sebaliknya jika \textit{player} musuh menembak maka \textit{player} yang dimainkan akan berkurang darahnya sebesar 20.
-\newpage
 \begin{enumerate}
-    \item \textit{Activity Class Diagram Game}
+    \item Blok \textit{Diagram Game}
     \begin{figure}[h]
         \centering
         \includegraphics[width=10cm]{blok-diagram-game.png}
