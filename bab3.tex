@@ -20,6 +20,8 @@ Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk 
     
     \begin{table}[h]
         \centering
+        \caption{Tabel spesifikasi}
+        \label{tb:tabel-spesifikasi}
         \begin{tabular}{|ll|lll}
         \cline{1-2}
         \multicolumn{2}{|c|}{Software}                                                &  &  &  \\ \cline{1-2}
@@ -31,8 +33,6 @@ Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk 
         \multicolumn{1}{|l|}{Video Card}     & Nvidia GeForce RTX 3050                &  &  &  \\ \cline{1-2}
         \multicolumn{1}{|l|}{SSD}            & 460GB                                  &  &  &  \\ \cline{1-2}
         \end{tabular}
-        \caption{Tabel spesifikasi}
-        \label{tb:tabel-spesifikasi}
         \end{table}
 
 % \subsection{Rancangan Algoritma Matchmaking}
@@ -198,21 +198,28 @@ Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk 
 %     Pada saat dilobby pemain akan memasuki kondisi kedua, menghubungkan pemain ke dalam game server, jika sudah ter-\textit{connect} maka pemain akan memasuki \textit{room} yang sudah dihubungkan. Jika semua activity sudah dilakukan dan pemain sudah menghabiskan pada \textit{room} terssebut maka pemain akan dikembalikan ke main menu.
 % \end{enumerate}
 
-\subsection{\textit{Class Diagram} Perancangan}
+\subsection{Rancangan \textit{Class Diagram}}
 \begin{figure}[h]
    \centering
    \includegraphics[width=10cm]{class-diagram-perancangan.png}
-    \caption{\textit{Class Diagram} Perancangan}
+    \caption{Rancangan \textit{class diagram} multiplayer}
     \label{fig:class-diagram-game}
 \end{figure}
 
-Pada gambar \ref{fig:class-diagram-game} perancangan sistem pembuatan game 3d terdiri dari, kontrol berfungsi untuk pegerakan arah dan posisi kamera karakter \textit{player}. Pada atribut karakter, karakter memiliki darah, pergerakan, bidik dan tembak  dan pada senjata, jika \textit{player} menembak \textit{player} lain maka player tersebut akan berkurang darahnya sebesar 20 begitu juga sebaliknya jika \textit{player} musuh menembak maka \textit{player} yang dimainkan akan berkurang darahnya sebesar 20.
+Pada gambar \ref{fig:class-diagram-game} merupakan perancangan sistem multiplayer yang akan diterapkan pada gim.
+Class PhotonNetwork dan PunClasses merupakan class yang ada pada library photon.
+Class PhotonManager merupakan class yang menampung fungsi untuk menyambungkan ke server, membuat \textit{room} dan bergabung pada \textit{room} yang ada.
+Class menu sendiri berfungsi sebagai \textit{interface} pada main menu gim, semua aksi yang ada pada main menu ditampung pada class menu.
+CreateObjectP merupakan kelas yang berfungsi untuk membuat map atau game object yang diinisialisasi.
+PlayerM merupakan kelas yang berfungsi untuk menampung semua pergerakan player seperti pergerakan,darah,menembak, dan kamera.
+GameplayMultiP merupakan class yang berfungsi sebagai \textit{gameplay} yang akan dimainkan seperti player, point pada game dan respawn pemain saat mati.
+Dan KarakterPlayer merupakan class yang berfungsi sebagai inisialisasi player utama.
 \begin{enumerate}
-    \item Blok \textit{Diagram Game}
+    \item Blok \textit{Diagram Gameplay}
     \begin{figure}[h]
         \centering
         \includegraphics[width=10cm]{blok-diagram-game.png}
-        \caption{\textit{Blok Diagram Game}}
+        \caption{\textit{Blok Diagram Gameplay}}
         \label{fig:aclass-diagram-game}
     \end{figure}
 
@@ -225,12 +232,12 @@ Pada gambar \ref{fig:class-diagram-game} perancangan sistem pembuatan game 3d te
 \section{Metode Penelitian}
 \noindent
 
-Photon memiliki fitur dan metode sendiri dalam mengelola sebuah \textit{game} multiplayer yang menggunakan \textit{framework}-nya. Metode penelitian yang menggunakan framework photon unity dapat digambarkan ke dalam bentuk flowchart seperti gambar .
+Photon memiliki fitur dan metode sendiri dalam mengelola sebuah \textit{game} multiplayer yang menggunakan \textit{framework}-nya. Untuk mengelola metode yang telah disediakan oleh photon sendiri, peniliti mengimplementasikan menjadi metode matchmaking pada game multiplayer fps untuk mencari roomlist atau create room pada game first person shoote jak meuprang.
         \begin{figure}[h]
          \centering
-         \caption{flowchart Algoritma Matchmaking}
          \includegraphics[width=10cm]{flowchart-matchmaking}
-         \label{fig:algoritmamatmaching}
+         \caption{Flowchart Algoritma Matchmaking}
+         \label{fig:algoritmamatmaching}`'
          \end{figure}
 
 Mengacu pada gambar \ref{fig:algoritmamatmaching}, algoritma membutuhkan daftar \textit{room} yang didapatkan dari \textit{interface} photon \textit{Behavior}. Jika belum ada \textit{room} yang tersedia pada daftar \textit{room}, maka dilakukan fungsi detil dari algoritma matchmaking yaitu SearchRoomMatchmaking(). 
@@ -263,10 +270,13 @@ Mengacu pada gambar \ref{fig:algoritmamatmaching}, algoritma membutuhkan daftar 
 %         \end{figure}
 
         \section{Teknik Pengujian}
+        \subsection{Blackbox}
 Teknik pengujian yang digunakan yaitu blackbox. Pengujian Black Box pada fungsional sistem yang terdapat pada aplikasi permainan jak meuprang.
 
     \begin{table}[h]
     \centering
+    \caption{Tabel Pengujian Black Box}
+    \label{lab:tabel-pengujian}
     \begin{tabular}{|l|l|l|l|}
     \hline
     \multicolumn{1}{|c|}{NO} & \multicolumn{1}{c|}{Aktivitas Pengujian} & \multicolumn{1}{c|}{Hasil yang diharapkan} & \multicolumn{1}{c|}{Kesimpulan} \\ \hline
@@ -276,10 +286,10 @@ Teknik pengujian yang digunakan yaitu blackbox. Pengujian Black Box pada fungsio
     4                        & Tombol About Game                        & Menampilkan popup about game               &                                 \\ \hline
     5                        & Tombol exit game                         & Keluar dari aplikasi game                  &                                 \\ \hline
     \end{tabular}
-    \caption{Tabel Pengujian Black Box}
-    \label{lab:tabel-pengujian}
     \end{table}
-\newpage        
+\newpage
+\subsection{Pengujian Delay}
+Teknik pengujian yang dilakukan setelah fungsional blackbox yaitu melakukan pengujian delay pada jaringan dan player.        
 \section{Hasil yang diharapkan}
 Hasil yang diharapkan pada penilitian ini antara lain :
 \begin{enumerate}
