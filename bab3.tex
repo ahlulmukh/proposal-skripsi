@@ -9,14 +9,14 @@ Pada bagian ini peniliti menggunakan dua jenis data yaitu data primer dan data s
 Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk menyusul proposal skripsi, yaitu :
 
 \begin{enumerate}
-    \item Studi Pustaka \\ Peneliti mengumpulkan data dengan cara mencari dari internet dan jurnal yang menyangkut atau jurnal yang membahas photon unity networking dalam pembuatan game multiplayer.
+    \item Studi Pustaka \\ Peneliti mengumpulkan data dengan cara mencari dari internet dan jurnal yang menyangkut atau jurnal yang membahas photon unity networking dalam pembuatan \textit{game} multiplayer.
     \item Observasi \\ Peniliti mengumpulkan data dengan cara memainkan sekaligus mengamati secara langsung permainan sejenis yang sudah ada.
 \end{enumerate}
 
 \section{Rancangan Sistem(software/hardware)}
 \noindent
 
-    Pada penilitian ini membutuhkan \textit{software} dan perangkat keras untuk melakukan pembuatan game first person shooter. Berikut ini spesifikasi rancangan sistem penilitian yang dijabarkan pada Tabel \ref{tb:tabel-spesifikasi}
+    Pada penilitian ini membutuhkan \textit{software} dan perangkat keras untuk melakukan pembuatan \textit{game} first person shooter. Berikut ini spesifikasi rancangan sistem penilitian yang dijabarkan pada Tabel \ref{tb:tabel-spesifikasi}
     
     \begin{table}[h]
         \centering
@@ -86,7 +86,7 @@ Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk 
 
     Gambar \ref{fig:case-diagram} menjelaskan tentang \textit{Use Case Diagram} dimana terdapat satu aktor yaitu pemain, serta 5 \textit{Use Case} yaitu \textit{Buat Room, Join Room, Exit Room, About Game, Exit Game}.
     Pemain dapat menjadi server jika pemain melakukan \textit{use case} buat room dan pemain juga bisa menjadi client jika pemain menggunakan \textit{use case join room}, tetapi jika tidak adanya pemain yang menggunakan \textit{use case} buat room, maka \textit{use case} join room tidak dapat digunakan oleh pemain yang menjadi client.
-    \textit{use case exit room} dapat dilakukan oleh pemain yang menjadi server maupun menjadi client, dan hal itu akan menghapus sesi room yang sudah dibuat jika semua pemain menggunakan \textit{use case exit room}. \textit{Use case about game} dapat dilakukan oleh pemain untuk mengetahui tentang game yang dimainkan, dan yang terakhir jika pemain ingin meninggalkam game, pemain mengunakan \textit{Use case Exit Game.}
+    \textit{use case exit room} dapat dilakukan oleh pemain yang menjadi server maupun menjadi client, dan hal itu akan menghapus sesi room yang sudah dibuat jika semua pemain menggunakan \textit{use case exit room}. \textit{Use case about game} dapat dilakukan oleh pemain untuk mengetahui tentang \textit{game} yang dimainkan, dan yang terakhir jika pemain ingin meninggalkam \textit{game}, pemain mengunakan \textit{Use case Exit Game.}
     \textit{Activity diagram} adalah diagram yang memodelkan aliran aktivitas pada sistem.
     \item Activity Diagram
     \begin{enumerate}
@@ -97,8 +97,8 @@ Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk 
            \caption{Activity Diagram Create Room}
            \label{fig:croom-case}
        \end{figure}
-       \\ Gambar \ref{fig:croom-case} merupakan \textit{Activity Diagram Create Room}. Diawali dengan pemain membuka game, sistem akan menampilkan menu game, player menekan tombol buat room untuk membuat room yang belum tersedia sebagai server atau pemilk room.
-       Pada \textit{activity waiting player} pemilik room akan menunggu player/\textit{client} untuk memasukan room dan memulai game.
+       \\ Gambar \ref{fig:croom-case} merupakan \textit{Activity Diagram Create Room}. Diawali dengan pemain membuka \textit{game}, sistem akan menampilkan menu \textit{game}, player menekan tombol buat room untuk membuat room yang belum tersedia sebagai server atau pemilk room.
+       Pada \textit{activity waiting player} pemilik room akan menunggu player/\textit{client} untuk memasukan room dan memulai \textit{game}.
        \newpage
     \item \textit{Activty Diagram} join \textit{Room}
     \begin{figure}[h]
@@ -107,7 +107,7 @@ Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk 
         \caption{Activity Diagram Join Room}
         \label{fig:jroom-case}
     \end{figure}
-    \\ Gambar \ref{fig:jroom-case} merupakan \textit{activity diagram join room}. Diawali dengan pemain membuka game, kemudian sistem akan menampilkan menu dari game, player menekan tombol join room, photon unity akan mencarikan room yang tersedia yang sudah dibuat oleh pemain lain atau bisa mengetikan manual custom port yang terdapat pada pembuat room. Pemain akan terhubung ke server atau room yang tersedia jika room valid.
+    \\ Gambar \ref{fig:jroom-case} merupakan \textit{activity diagram join room}. Diawali dengan pemain membuka \textit{game}, kemudian sistem akan menampilkan menu dari \textit{game}, player menekan tombol join room, photon unity akan mencarikan room yang tersedia yang sudah dibuat oleh pemain lain atau bisa mengetikan manual custom port yang terdapat pada pembuat room. Pemain akan terhubung ke server atau room yang tersedia jika room valid.
     \newpage
     \item  \textit{Activity Diagram Exit Room}
     \begin{figure}[h]
@@ -116,7 +116,7 @@ Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk 
         \caption{Activity Diagram Exit Room}
         \label{fig:eroom-case}
     \end{figure}
-    \\ Gambar \ref{fig:eroom-case} merupakan \textit{activity diagram exit room}. Diawali dengan pemain menekan tombol exit room, sistem akan menampilkan menu utama pada game.    
+    \\ Gambar \ref{fig:eroom-case} merupakan \textit{activity diagram exit room}. Diawali dengan pemain menekan tombol exit room, sistem akan menampilkan menu utama pada \textit{game}.    
     \item \textit{Activity Diagram About Room}
      \begin{figure}[h]
         \centering
@@ -124,12 +124,12 @@ Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk 
         \caption{Activity Diagram About Room}
         \label{fig:aroom-case}
     \end{figure}
-    \\ Gambar \ref{fig:aroom-case} merupakan \textit{activity diagram about room}. Diawali dengan pemain menekan tombol \textit{about room}. Sistem akan menampulkan isi tentang game yang dimainkan.
+    \\ Gambar \ref{fig:aroom-case} merupakan \textit{activity diagram about room}. Diawali dengan pemain menekan tombol \textit{about room}. Sistem akan menampulkan isi tentang \textit{game} yang dimainkan.
     \item  \textit{Activity Diagram Exit Game}
     \begin{figure}[h]
         \centering
         \includegraphics[width=10cm]{exitgame-diagram.png}
-        \caption{Activity Diagram Exit Game}
+        \caption{Activity Diagram Exit \textit{game}}
         \label{fig:egame-case}
     \end{figure}
     \\ Gambar \ref{fig:egame-case} merupakan \textit{activity diagram exit game}. Diawali dengan pemain menekan tombol \textit{exit game}. Sistem akan mengeluarkan pemain dari game yang sedang dimainkan.
@@ -210,9 +210,9 @@ Pada gambar \ref{fig:class-diagram-game} merupakan perancangan sistem multiplaye
 Class PhotonNetwork dan PunClasses merupakan class yang ada pada library photon.
 Class PhotonManager merupakan class yang menampung fungsi untuk menyambungkan ke server, membuat \textit{room} dan bergabung pada \textit{room} yang ada.
 Class menu sendiri berfungsi sebagai \textit{interface} pada main menu gim, semua aksi yang ada pada main menu ditampung pada class menu.
-CreateObjectP merupakan kelas yang berfungsi untuk membuat map atau game object yang diinisialisasi.
+CreateObjectP merupakan kelas yang berfungsi untuk membuat map atau \textit{game} object yang diinisialisasi.
 PlayerM merupakan kelas yang berfungsi untuk menampung semua pergerakan player seperti pergerakan,darah,menembak, dan kamera.
-GameplayMultiP merupakan class yang berfungsi sebagai \textit{gameplay} yang akan dimainkan seperti player, point pada game dan respawn pemain saat mati.
+GameplayMultiP merupakan class yang berfungsi sebagai \textit{gameplay} yang akan dimainkan seperti player, point pada \textit{game} dan respawn pemain saat mati.
 Dan KarakterPlayer merupakan class yang berfungsi sebagai inisialisasi player utama.
 \begin{enumerate}
     \item Blok \textit{Diagram Gameplay}
@@ -223,21 +223,21 @@ Dan KarakterPlayer merupakan class yang berfungsi sebagai inisialisasi player ut
         \label{fig:aclass-diagram-game}
     \end{figure}
 
-    Dapat dilihat pada gambar \ref{fig:aclass-diagram-game} digambarkan alur kerja atau aktivitas sebuah sistem game yang dimulai \textit{start game} untuk memulai permainan kemudian menunggu \textit{loading} untuk memasuki permainan, sistem akan menginisialisasi objectnya terlebih dahulu seperti map, senjata dan point.
-    Jika inisialisasi sudah selesai game akan dimulai dan pemain spawn pada saat game dimulai, jika pemain bertemu pemain lain dan bertempur akan ditemukan dua kondisi, jika mati pemain akan \textit{respawn} ulang dengan waktu 5 detik, jika pemain memenangkan pertempuran maka pemain mendapatkan point.
-    Ketika game sudah habis waktu makan game sudah berakhir dan akan mamasukin akhir game permainan.
+    Dapat dilihat pada gambar \ref{fig:aclass-diagram-game} digambarkan alur kerja atau aktivitas sebuah sistem \textit{game} yang dimulai \textit{start game} untuk memulai permainan kemudian menunggu \textit{loading} untuk memasuki permainan, sistem akan menginisialisasi objectnya terlebih dahulu seperti map, senjata dan point.
+    Jika inisialisasi sudah selesai \textit{game} akan dimulai dan pemain spawn pada saat \textit{game} dimulai, jika pemain bertemu pemain lain dan bertempur akan ditemukan dua kondisi, jika mati pemain akan \textit{respawn} ulang dengan waktu 5 detik, jika pemain memenangkan pertempuran maka pemain mendapatkan point.
+    Ketika \textit{game} sudah habis waktu makan \textit{game} sudah berakhir dan akan mamasukin akhir \textit{game} permainan.
 \end{enumerate}
 \newpage
 
 \section{Metode Penelitian}
 \noindent
 
-Photon memiliki fitur dan metode sendiri dalam mengelola sebuah \textit{game} multiplayer yang menggunakan \textit{framework}-nya. Untuk mengelola metode yang telah disediakan oleh photon sendiri, peniliti mengimplementasikan menjadi metode matchmaking pada game multiplayer fps untuk mencari roomlist atau create room pada game first person shoote jak meuprang.
+Photon memiliki fitur dan metode sendiri dalam mengelola sebuah \textit{game} multiplayer yang menggunakan \textit{framework}-nya. Untuk mengelola metode yang telah disediakan oleh photon, peniliti mengimplementasikan menjadi metode matchmaking pada \textit{game} \textit{multiplayer first person shooter}(fps) untuk mencari roomlist atau create room pada \textit{game} \textit{first person shooter} jak meuprang.
         \begin{figure}[h]
          \centering
          \includegraphics[width=10cm]{flowchart-matchmaking}
          \caption{Flowchart Algoritma Matchmaking}
-         \label{fig:algoritmamatmaching}`'
+         \label{fig:algoritmamatmaching}
          \end{figure}
 
 Mengacu pada gambar \ref{fig:algoritmamatmaching}, algoritma membutuhkan daftar \textit{room} yang didapatkan dari \textit{interface} photon \textit{Behavior}. Jika belum ada \textit{room} yang tersedia pada daftar \textit{room}, maka dilakukan fungsi detil dari algoritma matchmaking yaitu SearchRoomMatchmaking(). 
@@ -293,7 +293,7 @@ Teknik pengujian yang dilakukan setelah fungsional blackbox yaitu melakukan peng
 \section{Hasil yang diharapkan}
 Hasil yang diharapkan pada penilitian ini antara lain :
 \begin{enumerate}
-    \item Keberhasilan dalam mengetahui kelayakan aplikasi game dengan metode \textit{blackbox testing}.
-    \item Keberhasilan game terhubung dengan unity python networking yang dapat dimainkan secara multiplayer online.
+    \item Keberhasilan dalam mengetahui kelayakan aplikasi \textit{game} dengan metode \textit{blackbox testing} dan pengujian delay.
+    \item Keberhasilan \textit{game} terhubung dengan unity python networking yang dapat dimainkan secara multiplayer online.
     \item Laporan tugas akhir mahasiswa jurusan Teknologi Informasi Dan Komputer.
 \end{enumerate}
