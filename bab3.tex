@@ -198,7 +198,7 @@ Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk 
 %     Pada saat dilobby pemain akan memasuki kondisi kedua, menghubungkan pemain ke dalam game server, jika sudah ter-\textit{connect} maka pemain akan memasuki \textit{room} yang sudah dihubungkan. Jika semua activity sudah dilakukan dan pemain sudah menghabiskan pada \textit{room} terssebut maka pemain akan dikembalikan ke main menu.
 % \end{enumerate}
 
-\subsection{Rancangan \textit{Class Diagram}}
+\subsection{Rancangan \textit{Class Diagram Multiplayer}}
 \begin{figure}[h]
    \centering
    \includegraphics[width=10cm]{class-diagram-perancangan.png}
@@ -232,7 +232,7 @@ Dan KarakterPlayer merupakan class yang berfungsi sebagai inisialisasi player ut
 \section{Metode Penelitian}
 \noindent
 
-Photon memiliki fitur dan metode sendiri dalam mengelola sebuah \textit{game} multiplayer yang menggunakan \textit{framework}-nya. Untuk mengelola metode yang telah disediakan oleh photon, peniliti mengimplementasikan menjadi metode matchmaking pada \textit{game} \textit{multiplayer first person shooter}(fps) untuk mencari roomlist atau create room pada \textit{game} \textit{first person shooter} jak meuprang.
+Photon memiliki fitur dan metode sendiri dalam mengelola sebuah \textit{game} multiplayer yang menggunakan \textit{framework}-nya. Untuk mengelola metode yang telah disediakan oleh photon, peniliti mengimplementasikan metode matchmaking pada \textit{game} \textit{multiplayer first person shooter}(fps) untuk mencari roomlist atau create room pada \textit{game} \textit{first person shooter}.
         \begin{figure}[h]
          \centering
          \includegraphics[width=10cm]{flowchart-matchmaking}
@@ -271,7 +271,7 @@ Mengacu pada gambar \ref{fig:algoritmamatmaching}, algoritma membutuhkan daftar 
 
         \section{Teknik Pengujian}
         \subsection{Blackbox}
-Teknik pengujian yang digunakan yaitu blackbox. Pengujian Black Box pada fungsional sistem yang terdapat pada aplikasi permainan jak meuprang.
+Teknik pengujian yang digunakan yaitu blackbox. Pengujian Black Box pada fungsional sistem yang terdapat pada aplikasi permainan \textit{first person shooter}.
 
     \begin{table}[h]
     \centering
@@ -288,12 +288,16 @@ Teknik pengujian yang digunakan yaitu blackbox. Pengujian Black Box pada fungsio
     \end{tabular}
     \end{table}
 \newpage
+\subsection{Pengujian Whitebox}
+Teknik pengujian ini untuk mengetahui algoritma yang telah dirancang apakah berjalan dengan lancar atau tidak.
 \subsection{Pengujian Delay}
 Teknik pengujian yang dilakukan setelah fungsional blackbox yaitu melakukan pengujian delay pada jaringan dan player.        
+\subsection{Pengujian performa}
+Teknik pengujian performa untuk melakukan pengujian server pada photon cloud menggunakan wireshark untuk mengukur troughput, delay dan packet loss.
 \section{Hasil yang diharapkan}
 Hasil yang diharapkan pada penilitian ini antara lain :
 \begin{enumerate}
-    \item Keberhasilan dalam mengetahui kelayakan aplikasi \textit{game} dengan metode \textit{blackbox testing} dan pengujian delay.
+    \item Keberhasilan dalam mengetahui kelayakan aplikasi \textit{game} dengan metode \textit{blackbox testing}, whitebox, pengujian performa dan pengujian delay.
     \item Keberhasilan \textit{game} terhubung dengan unity python networking yang dapat dimainkan secara multiplayer online.
     \item Laporan tugas akhir mahasiswa jurusan Teknologi Informasi Dan Komputer.
 \end{enumerate}

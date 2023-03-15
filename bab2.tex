@@ -108,14 +108,21 @@ pemain lainnya, pemain terkoneksi menggunakan jaringan peer to peer. Pada \texti
 beberapa jenis kategori diantaranya adalah \textit{Massively} \textit{Multiplayer} Online \textit{game} (MMO), \textit{Massively} \textit{Multiplayer} 
 Online \textit{First-person Shooter} \textit{Game} (MMOFPS), \textit{Massively} \textit{Multiplayer} online \textit{Real-time Strategy} \textit{Game}
 (MMORTS), \textit{Massively} \textit{Multiplayer} Online Role-playing \textit{Game}s (MMORPG), \textit{Multiplayer} Online Battle Arena
-(MOBA)\cite{Ansori}.
+(MOBA)\cite{Ansori}. 
 
 \subsection{Photon Unity Networking (PUN)}
 \noindent
 
 Photon adalah sebuah framework pengembangan \textit{game} \textit{multiplayer} \textit{real-time} yang cepat, ringan, dan fleksibel. Photon terdiri dari server dan beberapa SDK klien untuk platform utama.
 Photon Unity Network (PUN) adalah solusi khusus Unity yang dihadirkan dengan tingkat yang lebih tinggi: matchmaking, panggilan balik yang mudah digunakan, komponen untuk sinkronisasi \textit{Game}Objects, Remote Procedure Calls (RPCs), dan fitur serupa yang memberikan awal yang baik. Di luar itu, terdapat API yang solid dan luas untuk kontrol yang lebih canggih \cite{pun}.
-
+Berikut gambaran 
+integrasi aplikasi dengan Photon Unity Networking pada Gambar \ref{fig:photonni}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=10cm]{arsitektur-photon.png}
+	\caption{Fitur Photon Unity Networking}
+	\label{fig:photonni}
+\end{figure}
 \subsection{\textit{First Person Shooter}(FPS)}
 \noindent
 
@@ -152,6 +159,43 @@ Untuk menghitung delay pada paket yang
 ditransmisikan adalah dengan membagi 
 antara panjang paket (dalam satuan bit) 
 dibagi dengan link bandwidth\cite{Sarwodi}.
+
+Untuk mengontrol jaringan dan simulasi 
+lag dari client, Photon menyediakan sebuah 
+komponen GUI sederhana yaitu Photon Lag 
+Simulation Gui. Dalam komponen ini 
+terdapat lag dan loss yang bias ditambahkan 
+untuk mencoba seberapa baik mekanisme 
+gim dalam kondisi jaringan yang lebih buruk\cite{guilag}. Kontrol yang terdapat pada komponen 
+simulasi ini dapat dilihat pada \ref{lab:simulation-gui}
+		\begin{table}
+			\centering
+			\caption{Tabel Simulation Gui}
+			\label{lab:simulation-gui}
+		\begin{tabular}{|c|c|}
+			\hline
+			\textbf{Kontrol} & \textbf{Keterangan} \\ \hline
+			RTT & Waktu pulang pergi hingga pesan diterima oleh server. \\ \hline
+			Sim & Mengaktfikan Dan Menonaktifkan Simulasi. \\ \hline
+			Lag & \begin{tabular}[c]{@{}c@{}}Menambahkan penundaan tetap untuk semua pesan\\ keluar dan masuk.\end{tabular} \\ \hline
+			Jit & Menambahkan penundaan acak hingga milidetik. \\ \hline
+			Loss & Menjatuhkan persentase pesan yang ditetapkan. \\ \hline
+			\end{tabular}
+			\end{table}
+
+			\newpage
+
+\subsection{Wireshark}
+\noindent
+
+Wireshark merupakan sebuah \textit{software} penganalisa jaringan yang paling dikenal. \textit{Software} ini 
+sangat berguna dalam menyediakan jaringan dan protokol serta memberikan informasi tentang 
+data yang tertangkap pada jaringan. Software wireshark dapat menganalisa transmisi paket data 
+dalam jaringan, proses koneksi dan transmisi data antar komputer. Dapat mengumpamakan 
+sebuah \textit{Network Packet Analyzer} sebagai alat untuk memeriksa apa yang sebenarnya sedang 
+terjadi di dalam kabel jaringan\cite{wireshark}.
+
+
 
 
 
