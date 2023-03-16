@@ -228,7 +228,18 @@ Dan KarakterPlayer merupakan class yang berfungsi sebagai inisialisasi player ut
     Ketika \textit{game} sudah habis waktu makan \textit{game} sudah berakhir dan akan mamasukin akhir \textit{game} permainan.
 \end{enumerate}
 \newpage
+\subsection{Alur Diagram Monitoring}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=3cm]{alur-diagram-monitoring.png}
+    \caption{Alur Diagram Monitoring}
+    \label{fig:alur-diagram}
+\end{figure}
 
+Dapat dilihat pada gambar \ref{fig:alur-diagram} digambarkan alur diagram monitoring jaringan dengan menggunakan wireshark qos, untuk mengetahui performa dari photon cloud yang disediakan oleh unity.
+Pada langkah pertama akan dimulai game terlebih dahulu dengan mode multiplayer online, kemudian melakukan monitoring photon cloud menggunakan aplikasi wireshark, kemudian diukurkan parameter \textit{troughput, packet loss, delay} dan \textit{jitter} dengan memasuki 2-3 player.
+Kemudian dianalisis berdasrkan standar TIPHON.
+\newpage
 \section{Metode Penelitian}
 \noindent
 
@@ -287,17 +298,13 @@ Teknik pengujian yang digunakan yaitu blackbox. Pengujian Black Box pada fungsio
     5                        & Tombol exit game                         & Keluar dari aplikasi game                  &                                 \\ \hline
     \end{tabular}
     \end{table}
-\newpage
-\subsection{Pengujian Whitebox}
-Teknik pengujian ini untuk mengetahui algoritma yang telah dirancang apakah berjalan dengan lancar atau tidak.
-\subsection{Pengujian Delay}
-Teknik pengujian yang dilakukan setelah fungsional blackbox yaitu melakukan pengujian delay pada jaringan dan player.        
-\subsection{Pengujian performa}
-Teknik pengujian performa untuk melakukan pengujian server pada photon cloud menggunakan wireshark untuk mengukur troughput, delay dan packet loss.
+\newpage        
+\subsection{Pengujian performa jaringan}
+Teknik pengujian performa untuk melakukan pengujian jaringan pada photon cloud menggunakan wireshark qos untuk mengukur troughput, delay dan packet loss.
 \section{Hasil yang diharapkan}
 Hasil yang diharapkan pada penilitian ini antara lain :
 \begin{enumerate}
-    \item Keberhasilan dalam mengetahui kelayakan aplikasi \textit{game} dengan metode \textit{blackbox testing}, whitebox, pengujian performa dan pengujian delay.
+    \item Keberhasilan dalam mengetahui kelayakan aplikasi \textit{game} dengan metode \textit{blackbox testing}, dan pengujian performa jaringan.
     \item Keberhasilan \textit{game} terhubung dengan unity python networking yang dapat dimainkan secara multiplayer online.
     \item Laporan tugas akhir mahasiswa jurusan Teknologi Informasi Dan Komputer.
 \end{enumerate}

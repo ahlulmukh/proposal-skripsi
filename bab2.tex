@@ -143,58 +143,63 @@ bahasa lainnya, C\# memiliki aturan pada syntax dan kode-kode yang bisa digunaka
 C\# cocok untuk dipelajari untuk pemula karena aturan syntax-nya lebih sederhana dibandingkan bahasa 
 pemograman lainnya \cite{Ansori}.
 
-\subsection{Pengujian Delay}
-\noindent
- 
-Delay atau latency adalah waktu yang 
-dibutuhkan untuk sebuah paket yang 
-dikirimkan dari sumber awal menuju tujuan 
-akhir pada sebuah jaringan. Dalam sebuah 
-proses transmisi paket pada jaringan 
-komputer, delay disebabkan karena adanya 
-antrian yang panjang. Delay diperoleh dari 
-selisih waktu kirim antara satu paket TCP 
-dengan paket lainnya dalam satuan seconds. 
-Untuk menghitung delay pada paket yang 
-ditransmisikan adalah dengan membagi 
-antara panjang paket (dalam satuan bit) 
-dibagi dengan link bandwidth\cite{Sarwodi}.
-
-Untuk mengontrol jaringan dan simulasi 
-lag dari client, Photon menyediakan sebuah 
-komponen GUI sederhana yaitu Photon Lag 
-Simulation Gui. Dalam komponen ini 
-terdapat lag dan loss yang bias ditambahkan 
-untuk mencoba seberapa baik mekanisme 
-gim dalam kondisi jaringan yang lebih buruk\cite{guilag}. Kontrol yang terdapat pada komponen 
-simulasi ini dapat dilihat pada \ref{lab:simulation-gui}
-		\begin{table}
-			\centering
-			\caption{Tabel Simulation Gui}
-			\label{lab:simulation-gui}
-		\begin{tabular}{|c|c|}
-			\hline
-			\textbf{Kontrol} & \textbf{Keterangan} \\ \hline
-			RTT & Waktu pulang pergi hingga pesan diterima oleh server. \\ \hline
-			Sim & Mengaktfikan Dan Menonaktifkan Simulasi. \\ \hline
-			Lag & \begin{tabular}[c]{@{}c@{}}Menambahkan penundaan tetap untuk semua pesan\\ keluar dan masuk.\end{tabular} \\ \hline
-			Jit & Menambahkan penundaan acak hingga milidetik. \\ \hline
-			Loss & Menjatuhkan persentase pesan yang ditetapkan. \\ \hline
-			\end{tabular}
-			\end{table}
-
-			\newpage
-
 \subsection{Wireshark}
 \noindent
 
 Wireshark merupakan sebuah \textit{software} penganalisa jaringan yang paling dikenal. \textit{Software} ini 
 sangat berguna dalam menyediakan jaringan dan protokol serta memberikan informasi tentang 
 data yang tertangkap pada jaringan. Software wireshark dapat menganalisa transmisi paket data 
-dalam jaringan, proses koneksi dan transmisi data antar komputer. Dapat mengumpamakan 
-sebuah \textit{Network Packet Analyzer} sebagai alat untuk memeriksa apa yang sebenarnya sedang 
-terjadi di dalam kabel jaringan\cite{wireshark}.
+dalam jaringan, proses koneksi dan transmisi data antar komputer\cite{wireshark}.
 
+\subsection{\textit{Quality Of Service (QoS)}}
+\noindent
+
+QoS (Quality Of Service) adalah parameter-parameter yang menjadi indicator bagus atau
+tidaknya performansi dari suatu jaringan. Parameter
+yang menjadi indikator dalam QoS ini meliputi 
+Bandwidth, Troughput, dan \textit{Packet Loss}, delay, dan
+jitter \cite{qos}. Untuk itu dilakukan analisis Quality Of
+Service (QoS) pada jaringan photon cloud .Adapun 
+standar pengkuran performansi dalam suatu jaringan 
+yaitu TIPHON (Telecommunicationsand Internet 
+Protocol Harmonization Over Networks) yang 
+mengkategorikan beberapa performansi dalam 
+perhintungan tertentu.
+
+\begin{enumerate}
+	\item \textit{\textit{Throughput}} \\
+	\textit{Throughput} merupakan parameter QoS yang 
+menunjukkan suatu kecepatan rata-rata bandwidth
+yang sebenarnya, diukur dengan satuan waktu 
+tertentu pada kondisi jaringan tertentu untuk 
+melakukan pengiriman paket dengan ukuran tertentu 
+juga. Hasil \textit{throughput} diambil dari jumlah paket 
+data yang dikirim dibagi dengan jumlah waktu yang 
+diperlukan saat pengiriman paket data.
+	\item \textit{Packet Loss} \\
+	\textit{Packet Loss} merupakan suatu parameter QoS 
+yang menunjukkan suatu jumlah total keseluruhan 
+paket hilang atau tidak sampai ke destinasi, 
+dikarenakan adanya overload atau congestion pada 
+jaringan. Dalam suatu jaringan, \textit{packet loss}
+diwajibkan mempunyai persentase yang kecil sesuai 
+dengan standar. 
+\item \textit{Delay} \\
+\textit{Delay} merupakan suatu parameter QoS yang 
+menunjukkan jumlah waktu yang diperlukan paket 
+untuk mencapai jarak dari source ke destination. 
+Berberapa hal yang mempengaruhi delay adalah 
+jarak, perangkat keras dan congestion. 
+\item \textit{Jitter}\\
+\textit{Jitter} merupakan suatu parameter QoS yang 
+menunjukkan jumlah dari variasi-variasi delay pada 
+transmisi paket pada jaringan. Hal ini disebabkan 
+banyaknya variasi panjang antrian paket dalam 
+waktu proses paket dan waktu penghimpunan ulang 
+paket-paket.
+
+
+\end{enumerate}
 
 
 
