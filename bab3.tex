@@ -214,19 +214,19 @@ CreateObjectP merupakan kelas yang berfungsi untuk membuat map atau \textit{game
 PlayerM merupakan kelas yang berfungsi untuk menampung semua pergerakan player seperti pergerakan,darah,menembak, dan kamera.
 GameplayMultiP merupakan class yang berfungsi sebagai \textit{gameplay} yang akan dimainkan seperti player, point pada \textit{game} dan respawn pemain saat mati.
 Dan KarakterPlayer merupakan class yang berfungsi sebagai inisialisasi player utama.
-\begin{enumerate}
-    \item Blok \textit{Diagram Gameplay}
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=10cm]{blok-diagram-game.png}
-        \caption{\textit{Blok Diagram Gameplay}}
-        \label{fig:aclass-diagram-game}
-    \end{figure}
 
-    Dapat dilihat pada gambar \ref{fig:aclass-diagram-game} digambarkan alur kerja atau aktivitas sebuah sistem \textit{game} yang dimulai \textit{start game} untuk memulai permainan kemudian menunggu \textit{loading} untuk memasuki permainan, sistem akan menginisialisasi objectnya terlebih dahulu seperti map, senjata dan point.
-    Jika inisialisasi sudah selesai \textit{game} akan dimulai dan pemain spawn pada saat \textit{game} dimulai, jika pemain bertemu pemain lain dan bertempur akan ditemukan dua kondisi, jika mati pemain akan \textit{respawn} ulang dengan waktu 5 detik, jika pemain memenangkan pertempuran maka pemain mendapatkan point.
-    Ketika \textit{game} sudah habis waktu makan \textit{game} sudah berakhir dan akan mamasukin akhir \textit{game} permainan.
-\end{enumerate}
+\subsection{Rancangan \textit{Blok} Diagram \textit{Game} Jak Meuprang}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=10cm]{blok-diagram-game.png}
+    \caption{\textit{Blok Diagram } Jak Meuprang}
+    \label{fig:aclass-diagram-game}
+\end{figure}
+
+Dapat dilihat pada gambar \ref{fig:aclass-diagram-game} digambarkan alur kerja atau aktivitas sebuah sistem \textit{game} yang dimulai \textit{start game} untuk memulai permainan kemudian menunggu \textit{loading} untuk memasuki permainan, sistem akan menginisialisasi objectnya terlebih dahulu seperti map, senjata dan point.
+Jika inisialisasi sudah selesai \textit{game} akan dimulai dan pemain spawn pada saat \textit{game} dimulai, jika pemain bertemu pemain lain dan bertempur akan ditemukan dua kondisi, jika mati pemain akan \textit{respawn} ulang dengan waktu 5 detik, jika pemain memenangkan pertempuran maka pemain mendapatkan point.
+Ketika \textit{game} sudah habis waktu makan \textit{game} sudah berakhir dan akan mamasukin akhir \textit{game} permainan.
+
 \newpage
 \subsection{Alur Diagram Monitoring}
 \begin{figure}[h]
