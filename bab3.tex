@@ -198,11 +198,11 @@ Penulis menggunakan beberapa tahap atau metode dalam melakukan penilitian untuk 
 %     Pada saat dilobby pemain akan memasuki kondisi kedua, menghubungkan pemain ke dalam game server, jika sudah ter-\textit{connect} maka pemain akan memasuki \textit{room} yang sudah dihubungkan. Jika semua activity sudah dilakukan dan pemain sudah menghabiskan pada \textit{room} terssebut maka pemain akan dikembalikan ke main menu.
 % \end{enumerate}
 
-\subsection{Rancangan \textit{Class Diagram Multiplayer}}
+\subsection{Rancangan \textit{Class Diagram Multiplayer Photon}}
 \begin{figure}[h]
    \centering
    \includegraphics[width=10cm]{class-diagram-perancangan.png}
-    \caption{Rancangan \textit{class diagram} multiplayer}
+    \caption{Rancangan \textit{class diagram} multiplayer photon}
     \label{fig:class-diagram-game}
 \end{figure}
 
@@ -215,7 +215,7 @@ PlayerM merupakan kelas yang berfungsi untuk menampung semua pergerakan player s
 GameplayMultiP merupakan class yang berfungsi sebagai \textit{gameplay} yang akan dimainkan seperti player, point pada \textit{game} dan respawn pemain saat mati.
 Dan KarakterPlayer merupakan class yang berfungsi sebagai inisialisasi player utama.
 
-\subsection{Rancangan \textit{Blok} Diagram \textit{Game} Jak Meuprang}
+\subsection{Rancangan \textit{Blok} Diagram Alur \textit{Game} Jak Meuprang}
 \begin{figure}[h]
     \centering
     \includegraphics[width=10cm]{blok-diagram-game.png}
@@ -227,18 +227,18 @@ Dapat dilihat pada gambar \ref{fig:aclass-diagram-game} digambarkan alur kerja a
 Jika inisialisasi sudah selesai \textit{game} akan dimulai dan pemain spawn pada saat \textit{game} dimulai, jika pemain bertemu pemain lain dan bertempur akan ditemukan dua kondisi, jika mati pemain akan \textit{respawn} ulang dengan waktu 5 detik, jika pemain memenangkan pertempuran maka pemain mendapatkan point.
 Ketika \textit{game} sudah habis waktu makan \textit{game} sudah berakhir dan akan mamasukin akhir \textit{game} permainan.
 
-\newpage
-\subsection{Alur Diagram Monitoring}
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=3cm]{alur-diagram-monitoring.png}
-    \caption{Alur Diagram Monitoring}
-    \label{fig:alur-diagram}
-\end{figure}
+% \newpage
+% \subsection{Alur Diagram Monitoring}
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=3cm]{alur-diagram-monitoring.png}
+%     \caption{Alur Diagram Monitoring}
+%     \label{fig:alur-diagram}
+% \end{figure}
 
-Dapat dilihat pada gambar \ref{fig:alur-diagram} digambarkan alur diagram monitoring jaringan dengan menggunakan wireshark qos, untuk mengetahui performa dari photon cloud yang disediakan oleh unity.
-Pada langkah pertama akan dimulai game terlebih dahulu dengan mode multiplayer online, kemudian melakukan monitoring photon cloud menggunakan aplikasi wireshark, kemudian diukurkan parameter \textit{troughput, packet loss, delay} dan \textit{jitter} dengan memasuki 2-3 player.
-Kemudian dianalisis berdasrkan standar TIPHON.
+% Dapat dilihat pada gambar \ref{fig:alur-diagram} digambarkan alur diagram monitoring jaringan dengan menggunakan wireshark qos, untuk mengetahui performa dari photon cloud yang disediakan oleh unity.
+% Pada langkah pertama akan dimulai game terlebih dahulu dengan mode multiplayer online, kemudian melakukan monitoring photon cloud menggunakan aplikasi wireshark, kemudian diukurkan parameter \textit{troughput, packet loss, delay} dan \textit{jitter} dengan memasuki 2-3 player.
+% Kemudian dianalisis berdasrkan standar TIPHON.
 \newpage
 \section{Metode Penelitian}
 \noindent
@@ -299,8 +299,8 @@ Teknik pengujian yang digunakan yaitu blackbox. Pengujian Black Box pada fungsio
     \end{tabular}
     \end{table}
 \newpage        
-\subsection{Pengujian performa jaringan}
-Teknik pengujian performa untuk melakukan pengujian jaringan pada photon cloud menggunakan wireshark qos untuk mengukur troughput, delay dan packet loss.
+% \subsection{Pengujian performa jaringan}
+% Teknik pengujian performa untuk melakukan pengujian jaringan pada photon cloud menggunakan wireshark qos untuk mengukur troughput, delay dan packet loss.
 \section{Hasil yang diharapkan}
 Hasil yang diharapkan pada penilitian ini antara lain :
 \begin{enumerate}
