@@ -14,7 +14,6 @@
 \usepackage{caption}
 \usepackage{longtable}
 
-
 \usepackage{geometry}
 \geometry{
 	top=4cm,
@@ -24,10 +23,23 @@
 }
 
 \usepackage{pdflscape}
+\usepackage{everypage}
 \usepackage{tabularray}
 \usepackage[table]{xcolor}
 \usepackage{setspace}
 \onehalfspacing
+
+\newcommand{\Lpagenumber}{\ifdim\textwidth=\linewidth\else\bgroup
+  \dimendef\margin=0 %use \margin instead of \dimen0
+  \ifodd\value{page}\margin=\oddsidemargin
+  \else\margin=\evensidemargin
+  \fi
+  \raisebox{\dimexpr -\topmargin-\headheight-\headsep-0.5\linewidth}[0pt][0pt]{%
+    \rlap{\hspace{\dimexpr \margin+\textheight+\footskip}%
+    \llap{\rotatebox{90}{\thepage}}}}%
+\egroup\fi}
+\AddEverypageHook{\Lpagenumber}%
+
   
 \renewcommand{\thechapter}{\centering \Roman{chapter}}
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
@@ -46,6 +58,14 @@
 \renewcommand\thesection{\arabic{section}}
 \def\thesection{\arabic{chapter}.\arabic{section}}
 \def\thetable{\arabic{table}}
+\def\fillandplacepagenumber{%
+ \par\pagestyle{empty}%
+ \vbox to 0pt{\vss}\vfill
+ \vbox to 0pt{\baselineskip0pt
+  \hbox to\linewidth{\hss}%
+  \baselineskip\footskip
+  \hbox to\linewidth{%
+     \hfil\thepage\hfil}\vss}}
 
 \titleformat{\section}[block]{\bf\normalsize}{\thesection}{0.6em}{}
 \titlespacing*{\section}{0pt}{5pt}{0pt}
@@ -68,7 +88,6 @@
 \hyphenation{me-la-in-kan}
 
 \input{settings}
-
 \begin{document}
 
 \input{cover}
